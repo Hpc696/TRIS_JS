@@ -1,3 +1,4 @@
+
 let x=[], o=[];
 let giocatore=0; //determina quando tocca al giocatore con la X e quando a quell con O
 let clicks=0; //cont totale dei click fatti(che portano a X o O)
