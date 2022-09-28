@@ -3,7 +3,7 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-
+//gioco tris solo da terminale
 let giocatore = "X";
 let tris = [
     ' ', ' ', ' ',
