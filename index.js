@@ -40,13 +40,13 @@ function cliccato(posizione){
     if(x[posizione-1]==false && o[posizione-1]==false){
         if(giocatore=='o'){
             o[posizione-1] = true;
-            document.getElementById("casella"+posizione).innerHTML = "o";
+            document.getElementById("casella"+posizione).src= "images/TickO.png";
             document.getElementById("casella"+posizione).style.opacity = "1";
             giocatore = 'x';
             tocca_a_x();
         } else if (giocatore == 'x') {
             x[posizione-1] = true;
-            document.getElementById("casella"+posizione).innerHTML = "x";
+            document.getElementById("casella"+posizione).src= "images/TickX.png";
             document.getElementById("casella"+posizione).style.opacity = "1";
             giocatore = 'o';
             tocca_a_o();
@@ -84,13 +84,16 @@ function reset() {
 //hover caselle
 function hox(posizione) {
     if (x[posizione-1] == false && o[posizione-1] == false) {
-        if (giocatore == 'o') {
-            document.getElementById("casella"+posizione).innerHTML = "o";
-            document.getElementById("casella"+posizione).style.opacity = "0.33";
-        } else if (giocatore == 'x') {
-            document.getElementById("casella"+posizione).innerHTML = "x";
-            document.getElementById("casella"+posizione).style.opacity = "0.33";
+        let img=document.createElement("img");
+        img.className="myimg";
+        if (giocatore == 'x') {
+            img.src = "images/TickX.png"; 
+        } else if (giocatore == 'o') {
+            img.src = "images/TickO.png"; 
+           
         }
+        let src = document.getElementById("casella"+posizione);
+        src.appendChild(img); 
     } else
         nhox(posizione);
 }
@@ -98,3 +101,4 @@ function nhox(posizione) {
     if (x[posizione-1] == false && o[posizione-1] == false)
         document.getElementById("casella"+posizione).innerHTML = "";
 }
+//fattibile con hidden ... visibility
